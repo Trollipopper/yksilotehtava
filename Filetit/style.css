@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero-content {
+  background-color: #303030bb;
+  padding: 1rem;
+}
+
+.hero {
+  height: 60vh;
+  background:url(img/poyta1.jpg)
+    center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: orange;
+  color: white;
+  cursor: pointer;
+}
+
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 200px;
+}
+
+footer {
+  background: #343434;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
