@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yhteystiedot, kehitystilanne ja palaute Opis Ravintolat -sovellusta varten."
+    />
+    <title>Yhteystiedot | Opis Ravintolat</title>
+    <link rel="stylesheet" href="../css/yhteystiedot.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body class="page page-contact">
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="Opis Ravintolat etusivu">
+          <span class="brand-mark">OR</span>
+          <span class="brand-text">
+            <strong>Opis Ravintolat</strong>
+            <span>Opiskelijaravintolat yhdellä silmäyksellä</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Päävalikko">
+          <a data-nav-link href="index.html">Etusivu</a>
+          <a data-nav-link href="ravintolat.html">Ravintolat</a>
+          <a data-nav-link href="kartta.html">Kartta</a>
+          <a data-nav-link href="yhteystiedot.html">Yhteystiedot</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--compact">
+        <div class="hero__content">
+          <p class="eyebrow">Yhteys ja palaute</p>
+          <h1>Yhteystiedot ja jatkokehitys</h1>
+          <p>
+            Tämä sivu toimii nyt palautteen ja projektitiedon pohjana. Kun
+            käyttäjätilit tai viestien käsittely lisätään myöhemmin, lomake ja
+            sisältö ovat jo valmiina.
+          </p>
+        </div>
+      </section>
+
+      <section class="section contact-layout">
+        <article class="surface contact-card">
+          <p class="eyebrow">Projektin tila</p>
+          <h3>Vanilla JS -sovellus, joka on valmis API-integraatioon</h3>
+          <p>
+            Tällä hetkellä data tulee paikallisesta mock-kerroksesta. Kun REST
+            API liitetään mukaan, sama käyttöliittymä voi näyttää oikeat tiedot.
+          </p>
+
+          <ul class="contact-info-list">
+            <li>Lähdekoodeissa on selkeä rakenne ja yhtenäiset polut.</li>
+            <li>Responsiivinen ulkoasu toimii myös pienellä ruudulla.</li>
+            <li>
+              Ravintolalista, kartta ja yhteyslomake ovat erillisiä näkymiä.
+            </li>
+          </ul>
+        </article>
+
+        <article class="surface contact-card">
+          <p class="eyebrow">Seuraava vaihe</p>
+          <h3>Mitä tähän voi lisätä myöhemmin</h3>
+          <p>
+            Kun oikea data tulee mukaan, tähän sovellukseen on helppo lisätä
+            esimerkiksi kirjautuminen, suosikit tai ravintolakohtaiset
+            asetukset.
+          </p>
+
+          <ul class="contact-info-list">
+            <li>Suosikkiravintoloiden tallennus.</li>
+            <li>Asiakasprofiilin muokkaus ja kuva.</li>
+            <li>Lisäsuodattimet kaupungin, tarjoajan tai etäisyyden mukaan.</li>
+          </ul>
+        </article>
+
+        <form id="contact-form" class="contact-form surface">
+          <p class="eyebrow">Lähetä viesti</p>
+          <h3>Anna palautetta sivustosta</h3>
+
+          <label for="name">Nimi</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Etunimi Sukunimi"
+          />
+
+          <label for="email">Sähköposti</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nimi@esimerkki.fi"
+          />
+
+          <label for="message">Viesti</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Kerro, mitä haluaisit parantaa tai lisätä."
+          ></textarea>
+
+          <p class="form-hint">
+            Lomake on valmiina myöhempää käsittelyä varten, mutta ei vielä
+            lähetä tietoja palvelimeen.
+          </p>
+
+          <button type="submit" class="button">Lähetä viesti</button>
+          <p id="contact-status" class="status-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Opis Ravintolat · Yhteystiedot ja palaute ovat valmiina jatkoon.</p>
+    </footer>
+  </body>
+</html>

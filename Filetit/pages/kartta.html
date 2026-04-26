@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Opis Ravintolat näyttää opiskelijaravintolat kartalla ja korostaa lähimmän vaihtoehdon."
+    />
+    <title>Kartta | Opis Ravintolat</title>
+    <link rel="stylesheet" href="../css/kartta.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body class="page page-map">
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="Opis Ravintolat etusivu">
+          <span class="brand-mark">OR</span>
+          <span class="brand-text">
+            <strong>Opis Ravintolat</strong>
+            <span>Opiskelijaravintolat yhdellä silmäyksellä</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Päävalikko">
+          <a data-nav-link href="index.html">Etusivu</a>
+          <a data-nav-link href="ravintolat.html">Ravintolat</a>
+          <a data-nav-link href="kartta.html">Kartta</a>
+          <a data-nav-link href="yhteystiedot.html">Yhteystiedot</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--compact">
+        <div class="hero__content">
+          <p class="eyebrow">Kartta</p>
+          <h1>Lähin ravintola erottuu heti</h1>
+          <p>
+            Karttanäkymä on visuaalinen paikkamerkki myöhemmälle kartta-API:lle.
+            Nyt näet ravintolat, etäisyydet ja lähimmän vaihtoehdon yhdellä
+            silmäyksellä.
+          </p>
+        </div>
+      </section>
+
+      <section class="section page-intro">
+        <p>
+          Karttaa ei tarvitse rakentaa uudelleen myöhemmin. Kun oikea kartta-API
+          liitetään, tämä sivu voi näyttää saman datan tarkemmalla sijainnilla.
+        </p>
+      </section>
+
+      <section class="section map-layout">
+        <div class="map-canvas">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Karttanäkymä</p>
+              <h3>Ravintolat sijoitettuna esikatseluun</h3>
+            </div>
+            <span class="pill">Esikatselu</span>
+          </div>
+
+          <p class="map-caption">
+            Kartta on rakennettu niin, että oikea paikkatieto voidaan vaihtaa
+            myöhemmin ilman käyttöliittymän uudelleenrakennusta.
+          </p>
+
+          <div
+            id="map-pins"
+            class="map-pins"
+            aria-label="Ravintolapisteet"
+          ></div>
+        </div>
+
+        <aside class="map-sidebar">
+          <article class="surface contact-card">
+            <p class="eyebrow">Lähin ravintola</p>
+            <div id="nearest-restaurant"></div>
+          </article>
+
+          <article class="surface contact-card">
+            <p class="eyebrow">Etäisyysjärjestys</p>
+            <div id="map-list" class="map-list"></div>
+          </article>
+        </aside>
+      </section>
+
+      <section class="section note-card">
+        <p class="eyebrow">Karttavalmis</p>
+        <h3>Visuaalinen kartta toimii jo nyt ilman ulkoista palvelua</h3>
+        <p>
+          Kun varsinainen kartta lisätään, pisteet, lähin ravintola ja listaus
+          voivat käyttää samaa dataa sellaisenaan.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Opis Ravintolat · Karttanäkymä on valmis myöhemmälle paikkatiedolle.
+      </p>
+    </footer>
+  </body>
+</html>
