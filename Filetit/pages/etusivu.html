@@ -8,13 +8,18 @@
       content="Opis Ravintolat kokoaa opiskelijaravintolat, päivän ruokalistat ja viikon näkymän yhteen paikkaan."
     />
     <title>Opis Ravintolat | Etusivu</title>
+    <link rel="stylesheet" href="../css/shared.css" />
     <link rel="stylesheet" href="../css/index.css" />
     <script src="../js/main.js" defer></script>
   </head>
   <body class="page page-home">
     <header class="site-header">
       <div class="container navbar">
-        <a class="brand" href="index.html" aria-label="Opis Ravintolat etusivu">
+        <a
+          class="brand"
+          href="etusivu.html"
+          aria-label="Opis Ravintolat etusivu"
+        >
           <span class="brand-mark">OR</span>
           <span class="brand-text">
             <strong>Opis Ravintolat</strong>
@@ -23,7 +28,7 @@
         </a>
 
         <nav class="site-nav" aria-label="Päävalikko">
-          <a data-nav-link href="index.html">Etusivu</a>
+          <a data-nav-link href="etusivu.html">Etusivu</a>
           <a data-nav-link href="ravintolat.html">Ravintolat</a>
           <a data-nav-link href="kartta.html">Kartta</a>
           <a data-nav-link href="yhteystiedot.html">Yhteystiedot</a>
@@ -32,85 +37,15 @@
     </header>
 
     <main>
-      <section class="hero hero--home">
-        <div class="hero__content">
-          <p class="eyebrow">Opiskelijaravintolat</p>
-          <h1>Ruokalistat, jotka löytyvät yhdestä paikasta</h1>
-          <p>
-            Opis Ravintolat tarjoaa selkeän pohjan päivittäisille ja
-            viikoittaisille ruokalistoille. Kun API liitetään myöhemmin, sama
-            näkymä voi näyttää oikeat ravintolat ilman rakenteen vaihtamista.
-          </p>
-
-          <div class="hero__actions">
-            <a class="button" href="ravintolat.html">Selaa ravintoloita</a>
-            <a class="button button--secondary" href="kartta.html"
-              >Katso kartta</a
-            >
-          </div>
-
-          <div class="hero-stats" aria-label="Pikatiedot">
-            <div class="hero-stat">
-              <strong>Päivän menu</strong>
-              <span>Nopea näkymä tämän päivän lounaaseen.</span>
-            </div>
-            <div class="hero-stat">
-              <strong>Viikon menu</strong>
-              <span>Sama rakenne toimii koko viikon ruokalistalle.</span>
-            </div>
-            <div class="hero-stat">
-              <strong>Karttanäkymä</strong>
-              <span>Lähin ravintola korostuu ja paikat löytyvät nopeasti.</span>
-            </div>
-          </div>
-        </div>
+      <section class="section page-topline">
+        <p>Opis Ravintolat</p>
       </section>
 
       <section class="section">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Miksi tämä toimii</p>
-            <h2>Selkeä rakenne myöhempää APIa varten</h2>
-          </div>
-          <p>
-            Tässä vaiheessa sivusto on jo käyttökelpoinen esittelyyn ja
-            jatkokehitykseen.
-          </p>
-        </div>
-
-        <div class="intro-grid feature-grid">
-          <article class="feature-card">
-            <p class="eyebrow">Yksi data-kerros</p>
-            <h3>Ravintolat ja menut vaihdetaan yhdestä paikasta</h3>
-            <p>
-              JS ei ole sidottu yhteen sivuun, vaan sama data ruokkii listat,
-              kartan ja nostot.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <p class="eyebrow">Helppo laajentaa</p>
-            <h3>Suodattimet, valinta ja aikajakso on jo valmiina</h3>
-            <p>
-              Kun oikea REST API lisätään, käyttäjälogiikka voi pysyä samana.
-            </p>
-          </article>
-
-          <article class="feature-card">
-            <p class="eyebrow">Siisti julkaisu</p>
-            <h3>Responsiivinen ja luettava myös puhelimella</h3>
-            <p>
-              Ulkoasu käyttää selkeitä kortteja, kontrastia ja joustavaa gridiä.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Esimerkki</p>
-            <h2>Nostoja lähellä olevista ravintoloista</h2>
+            <p class="eyebrow">Nosto</p>
+            <h2>Sinulle valitut ravintolat</h2>
           </div>
           <a class="button button--ghost" href="ravintolat.html">Avaa näkymä</a>
         </div>
@@ -121,19 +56,10 @@
           aria-live="polite"
         ></div>
       </section>
-
-      <section class="section note-card">
-        <p class="eyebrow">Valmiina API:ta varten</p>
-        <h3>Rakenne on tehty jatkoa varten, ei vain demoa varten</h3>
-        <p>
-          Ruokalista-, kartta- ja yhteystietonäkymät on pilkottu niin, että
-          myöhempi REST API voi täyttää sisällöt ilman HTML-remonttia.
-        </p>
-      </section>
     </main>
 
     <footer class="site-footer">
-      <p>Opis Ravintolat · Vanilla JS -pohja valmiina jatkokehitykseen.</p>
+      <p>Opis Ravintolat</p>
     </footer>
   </body>
 </html>

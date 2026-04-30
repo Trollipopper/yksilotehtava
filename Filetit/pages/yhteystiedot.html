@@ -8,13 +8,18 @@
       content="Yhteystiedot, kehitystilanne ja palaute Opis Ravintolat -sovellusta varten."
     />
     <title>Yhteystiedot | Opis Ravintolat</title>
+    <link rel="stylesheet" href="../css/shared.css" />
     <link rel="stylesheet" href="../css/yhteystiedot.css" />
     <script src="../js/main.js" defer></script>
   </head>
   <body class="page page-contact">
     <header class="site-header">
       <div class="container navbar">
-        <a class="brand" href="index.html" aria-label="Opis Ravintolat etusivu">
+        <a
+          class="brand"
+          href="etusivu.html"
+          aria-label="Opis Ravintolat etusivu"
+        >
           <span class="brand-mark">OR</span>
           <span class="brand-text">
             <strong>Opis Ravintolat</strong>
@@ -23,7 +28,7 @@
         </a>
 
         <nav class="site-nav" aria-label="Päävalikko">
-          <a data-nav-link href="index.html">Etusivu</a>
+          <a data-nav-link href="etusivu.html">Etusivu</a>
           <a data-nav-link href="ravintolat.html">Ravintolat</a>
           <a data-nav-link href="kartta.html">Kartta</a>
           <a data-nav-link href="yhteystiedot.html">Yhteystiedot</a>
@@ -32,93 +37,169 @@
     </header>
 
     <main>
-      <section class="hero hero--compact">
-        <div class="hero__content">
-          <p class="eyebrow">Yhteys ja palaute</p>
-          <h1>Yhteystiedot ja jatkokehitys</h1>
-          <p>
-            Tämä sivu toimii nyt palautteen ja projektitiedon pohjana. Kun
-            käyttäjätilit tai viestien käsittely lisätään myöhemmin, lomake ja
-            sisältö ovat jo valmiina.
-          </p>
-        </div>
+      <section class="section page-topline">
+        <p>Opis Ravintolat</p>
       </section>
 
       <section class="section contact-layout">
-        <article class="surface contact-card">
-          <p class="eyebrow">Projektin tila</p>
-          <h3>Vanilla JS -sovellus, joka on valmis API-integraatioon</h3>
-          <p>
-            Tällä hetkellä data tulee paikallisesta mock-kerroksesta. Kun REST
-            API liitetään mukaan, sama käyttöliittymä voi näyttää oikeat tiedot.
-          </p>
+        <article class="surface contact-card auth-card">
+          <p class="eyebrow">Oma tili</p>
+          <h3>Kirjaudu ja päivitä tietosi</h3>
 
-          <ul class="contact-info-list">
-            <li>Lähdekoodeissa on selkeä rakenne ja yhtenäiset polut.</li>
-            <li>Responsiivinen ulkoasu toimii myös pienellä ruudulla.</li>
-            <li>
-              Ravintolalista, kartta ja yhteyslomake ovat erillisiä näkymiä.
-            </li>
-          </ul>
+          <div id="auth-gate" class="auth-gate" aria-live="polite">
+            <p>Kirjaudu ensin jatkaaksesi.</p>
+          </div>
+
+          <div class="user-summary">
+            <div id="current-user-avatar" class="avatar-badge">OR</div>
+            <div>
+              <strong id="current-user-name">Ei kirjautumista</strong>
+              <p id="current-user-meta">
+                Kirjaudu sisään, niin profiiliasetukset aktivoituvat.
+              </p>
+              <p id="current-user-favourite">Suosikki: -</p>
+            </div>
+          </div>
+
+          <p id="auth-status" class="status-message" aria-live="polite"></p>
+
+          <div class="auth-grid">
+            <form id="login-form" class="auth-form">
+              <h4>Kirjautuminen</h4>
+              <label for="login-username">Käyttäjänimi</label>
+              <input type="text" id="login-username" name="username" />
+
+              <label for="login-password">Salasana</label>
+              <input type="password" id="login-password" name="password" />
+
+              <button type="submit" class="button">Kirjaudu sisään</button>
+              <button
+                type="button"
+                id="show-register-button"
+                class="link-button auth-switch"
+              >
+                Rekisteröidy
+              </button>
+            </form>
+
+            <form id="register-form" class="auth-form">
+              <h4>Rekisteröityminen</h4>
+              <label for="register-username">Käyttäjänimi</label>
+              <input type="text" id="register-username" name="username" />
+              <div class="button-row">
+                <button
+                  type="button"
+                  id="username-check-button"
+                  class="button button--secondary button--small"
+                >
+                  Tarkista nimi
+                </button>
+              </div>
+              <p
+                id="username-availability"
+                class="status-message"
+                aria-live="polite"
+              ></p>
+
+              <label for="register-email">Sähköposti</label>
+              <input type="email" id="register-email" name="email" />
+
+              <label for="register-password">Salasana</label>
+              <input type="password" id="register-password" name="password" />
+
+              <button type="submit" class="button button--secondary">
+                Luo tili
+              </button>
+              <button
+                type="button"
+                id="show-login-button"
+                class="link-button auth-switch"
+              >
+                Kirjaudu sisään
+              </button>
+            </form>
+          </div>
+
+          <form id="profile-form" class="auth-form auth-form--stack">
+            <h4>Profiilin päivitys</h4>
+            <div class="form-row">
+              <div>
+                <label for="profile-username">Käyttäjänimi</label>
+                <input type="text" id="profile-username" name="username" />
+              </div>
+              <div>
+                <label for="profile-email">Sähköposti</label>
+                <input type="email" id="profile-email" name="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="profile-password">Uusi salasana</label>
+                <input type="password" id="profile-password" name="password" />
+              </div>
+              <div>
+                <label for="favourite-restaurant-select"
+                  >Suosikkiravintola</label
+                >
+                <select
+                  id="favourite-restaurant-select"
+                  name="favouriteRestaurant"
+                ></select>
+              </div>
+            </div>
+
+            <p class="field-help">
+              Päivitys tallentaa tiedot käyttäjätilillesi ja vaihtaa suosikin
+              yhdellä kertaa.
+            </p>
+
+            <div class="button-row">
+              <button type="submit" class="button">Tallenna muutokset</button>
+              <button
+                type="button"
+                id="logout-button"
+                class="button button--secondary"
+              >
+                Kirjaudu ulos
+              </button>
+            </div>
+          </form>
+
+          <form id="avatar-form" class="auth-form auth-form--stack">
+            <h4>Profiilikuva</h4>
+            <label for="avatar-file">Valitse kuva</label>
+            <input
+              type="file"
+              id="avatar-file"
+              name="avatar"
+              accept="image/*"
+            />
+            <button type="submit" class="button button--secondary">
+              Lataa kuva
+            </button>
+          </form>
+
+          <button id="delete-account-button" type="button" class="link-button">
+            Poista käyttäjätili
+          </button>
         </article>
 
-        <article class="surface contact-card">
-          <p class="eyebrow">Seuraava vaihe</p>
-          <h3>Mitä tähän voi lisätä myöhemmin</h3>
-          <p>
-            Kun oikea data tulee mukaan, tähän sovellukseen on helppo lisätä
-            esimerkiksi kirjautuminen, suosikit tai ravintolakohtaiset
-            asetukset.
-          </p>
-
-          <ul class="contact-info-list">
-            <li>Suosikkiravintoloiden tallennus.</li>
-            <li>Asiakasprofiilin muokkaus ja kuva.</li>
-            <li>Lisäsuodattimet kaupungin, tarjoajan tai etäisyyden mukaan.</li>
-          </ul>
-        </article>
-
-        <form id="contact-form" class="contact-form surface">
-          <p class="eyebrow">Lähetä viesti</p>
-          <h3>Anna palautetta sivustosta</h3>
-
-          <label for="name">Nimi</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Etunimi Sukunimi"
-          />
-
-          <label for="email">Sähköposti</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="nimi@esimerkki.fi"
-          />
-
-          <label for="message">Viesti</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            placeholder="Kerro, mitä haluaisit parantaa tai lisätä."
-          ></textarea>
-
-          <p class="form-hint">
-            Lomake on valmiina myöhempää käsittelyä varten, mutta ei vielä
-            lähetä tietoja palvelimeen.
-          </p>
-
-          <button type="submit" class="button">Lähetä viesti</button>
+        <div class="contact-actions">
+          <button
+            id="contact-send-button"
+            type="button"
+            class="button button--ghost button--small"
+          >
+            Lähetä viesti
+          </button>
           <p id="contact-status" class="status-message" aria-live="polite"></p>
-        </form>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Opis Ravintolat · Yhteystiedot ja palaute ovat valmiina jatkoon.</p>
+      <p>Opis Ravintolat</p>
     </footer>
   </body>
 </html>

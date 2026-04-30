@@ -8,13 +8,18 @@
       content="Selaa opiskelijaravintoloita, suodata ne kaupungin tai tarjoajan mukaan ja vaihda päivän sekä viikon ruokalistojen välillä."
     />
     <title>Ravintolat | Opis Ravintolat</title>
+    <link rel="stylesheet" href="../css/shared.css" />
     <link rel="stylesheet" href="../css/ravintolat.css" />
     <script src="../js/main.js" defer></script>
   </head>
   <body class="page page-restaurants">
     <header class="site-header">
       <div class="container navbar">
-        <a class="brand" href="index.html" aria-label="Opis Ravintolat etusivu">
+        <a
+          class="brand"
+          href="etusivu.html"
+          aria-label="Opis Ravintolat etusivu"
+        >
           <span class="brand-mark">OR</span>
           <span class="brand-text">
             <strong>Opis Ravintolat</strong>
@@ -23,7 +28,7 @@
         </a>
 
         <nav class="site-nav" aria-label="Päävalikko">
-          <a data-nav-link href="index.html">Etusivu</a>
+          <a data-nav-link href="etusivu.html">Etusivu</a>
           <a data-nav-link href="ravintolat.html">Ravintolat</a>
           <a data-nav-link href="kartta.html">Kartta</a>
           <a data-nav-link href="yhteystiedot.html">Yhteystiedot</a>
@@ -32,30 +37,15 @@
     </header>
 
     <main>
-      <section class="hero hero--compact">
-        <div class="hero__content">
-          <p class="eyebrow">Ruokalistat</p>
-          <h1>Ravintolat ja päivän tai viikon menu</h1>
-          <p>
-            Valitse ravintola, suodata se kaupungin tai tarjoajan mukaan ja
-            vaihda päivän sekä viikon näkymän välillä. Kun API tulee mukaan,
-            tämä käyttölogiikka voi pysyä ennallaan.
-          </p>
-        </div>
-      </section>
-
-      <section class="section page-intro">
-        <p>
-          Käyttö on rakennettu niin, että ravintoloiden selaaminen ja
-          ruokalistan vaihtaminen toimii jo nyt ilman backendia.
-        </p>
+      <section class="section page-topline">
+        <p>Opis Ravintolat</p>
       </section>
 
       <section class="section toolbar">
         <article class="toolbar-card">
           <div class="toolbar-card__header">
             <p class="eyebrow">Suodattimet</p>
-            <h3>Tarkenna ravintolalistaa</h3>
+            <h3>Ravintolalista</h3>
           </div>
 
           <div class="filters-grid">
@@ -91,7 +81,6 @@
           <div class="toolbar-card__header">
             <p class="eyebrow">Aikajakso</p>
             <h3>Ruokalistan näkymä</h3>
-            <p>Vaihda nopeasti päivän ja viikon välillä.</p>
           </div>
 
           <div
@@ -131,11 +120,6 @@
             >
           </div>
 
-          <p class="page-intro">
-            Valitse ravintola listasta. Sivupalkki näyttää sen jälkeen päivän
-            tai viikon ruokalistan.
-          </p>
-
           <div
             id="restaurant-list"
             class="restaurant-list"
@@ -149,26 +133,16 @@
               <p class="eyebrow">Valittu ravintola</p>
               <h3 id="selected-restaurant-name">-</h3>
             </div>
-            <span class="pill pill--accent">API-valmis</span>
           </div>
 
           <div id="selected-restaurant-info" class="page-intro"></div>
           <div id="menu-panel"></div>
         </article>
       </section>
-
-      <section class="section note-card">
-        <p class="eyebrow">Jatkokehitys</p>
-        <h3>Suodattimet ja ruokalistan vaihto ovat jo toiminnassa</h3>
-        <p>
-          Kun oikea REST API liitetään, riittää että mock-data korvataan
-          verkkopyynnöillä. Sivun rakenne ei tarvitse muuttua.
-        </p>
-      </section>
     </main>
 
     <footer class="site-footer">
-      <p>Opis Ravintolat · Ravintolalista on valmis API-dataa varten.</p>
+      <p>Opis Ravintolat</p>
     </footer>
   </body>
 </html>
